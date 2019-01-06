@@ -17,6 +17,12 @@ Using Command Line
 3. mvn clean install
 4. mvn spring-boot:run
 
+To Test -
+Open any browser and hit below url
+http://localhost:8080/site-map?url={Any site you want to test}
+
+example - http://localhost:8080/site-map?url=https://stackoverflow.com/
+
 TODO
 1. dockerize the app
 2. Code optimisation- asynchronous calls and control over crawl depth
