@@ -21,9 +21,9 @@ To Test -
 Open any browser and hit below url
 http://localhost:8080/site-map?url={Any site you want to test}
 
-example - http://localhost:8080/site-map?url=https://stackoverflow.com/
+example - http://localhost:8080/site-map?url=https://test.com/
 
 TODO
-1. dockerize the app
+1. Dockerize the app
 2. Code optimisation- asynchronous calls and control over crawl depth
 3. Additional Code coverage with more test cases

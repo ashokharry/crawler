@@ -20,9 +20,7 @@ public class CrawlerController {
 
     @GetMapping(value="/site-map")
     String siteMapLookup(@RequestParam("url") String url){
-        Set<String> linksPool = new HashSet<>();
-
         Gson gson = new Gson();
-        return gson.toJson(crawlerService.storeLinks(url, linksPool));
+        return gson.toJson(crawlerService.storeLinks(url));
     }
 }

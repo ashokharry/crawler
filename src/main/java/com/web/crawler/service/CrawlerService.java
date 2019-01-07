@@ -12,7 +12,15 @@ import java.util.regex.Pattern;
 @Service
 public class CrawlerService {
 
-    public Set<String> storeLinks(String urlLink, Set<String> linksPool) {
+    private static Set<String> linksPool = new HashSet<>();
+
+    public Set<String> storeLinks(String urlLink) {
+        linksPool = new HashSet<>();
+        execute(urlLink);
+        return linksPool;
+    }
+
+    private void execute(String urlLink) {
 
         if(!linksPool.contains(urlLink)){
             linksPool.add(urlLink);
@@ -32,7 +40,7 @@ public class CrawlerService {
 
                 for (String str : allLinks) {
                     if (str.startsWith(urlLink)) {
-                        storeLinks(str, linksPool);
+                        execute(str);
                     }else{
                         linksPool.add(str);
                     }
@@ -42,6 +50,5 @@ public class CrawlerService {
             { e.printStackTrace();
             }
         }
-        return linksPool;
     }
 }
